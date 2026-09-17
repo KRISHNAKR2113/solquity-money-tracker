@@ -1,21 +1,28 @@
-# Solquity Money Tracker
+# Solquity — Public Money Workspace
 
-A small, local-first money tracker built as a public portfolio demo with synthetic starter data.
+An interactive, local-first portfolio edition of Solquity built with synthetic financial records.
 
-[Open the live demo](https://krishnakr2113.github.io/solquity-money-tracker/)
+**[Open the live demo →](https://krishnakr2113.github.io/solquity-money-tracker/)**
 
-## Product idea
+## Explore the product
 
-Money tracking should make records easier to understand without sending them somewhere else. This demo keeps its ledger in browser storage, calculates income, spending, available money and a savings rate, and makes every transaction editable by resetting or adding local entries.
+- monthly overview with income, spending, commitments, cash flow and categories;
+- searchable transaction ledger with explicit income, spending and refund records;
+- automatic payment-capture review where detected items do not count until approved;
+- tracked accounts and calculated balances with statement comparison;
+- category budgets and savings-goal progress;
+- recurring payments, subscriptions and SIP schedules;
+- Money Check presentation connecting a SIP plan, debit and purchase record;
+- investment holdings, cost basis, dated values, allocation and gain calculations;
+- masked demo cards linked to tracked accounts;
+- EMI, affordability and planning calculations with assumptions visible;
+- browser-local persistence and a full synthetic-data reset.
 
 ## Privacy boundaries
 
-- no account, backend, analytics or network API;
-- no bank connection, notification access or financial advice;
-- synthetic starter records only;
-- data entered in the demo remains in this browser's local storage.
+This public edition has no account, bank connection, notification permission, online AI, analytics or network API. It accepts only synthetic demo values and keeps them in this browser's local storage. It never asks for full card numbers, PINs, CVVs or personal financial documents.
 
-The private Solquity product has a broader feature set. This repository is independently written for public demonstration and contains no private financial records, workbook identifiers, OAuth configuration, signing material or private source code.
+The private Android product includes encrypted local storage, notification capture, optional Google Sheets exchange, protected card details, backups, investment imports and native device workflows. This public repository independently recreates the main product concepts without including personal records, OAuth configuration, signing material or private source code.
 
 ## Run and test
 

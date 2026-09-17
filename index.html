@@ -1,6 +1,26 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solquity Money Tracker</title><link rel="stylesheet" href="styles.css"></head><body>
-<main><header><div><span class="mark">S</span><span>Solquity</span></div><p>LOCAL-FIRST MONEY TRACKER</p></header>
-<section class="hero"><div><span class="eyebrow">YOUR MONTH AT A GLANCE</span><h1>Track money.<br><em>Keep context.</em></h1><p>A focused portfolio demo for clear spending records, useful categories and realistic savings goals.</p></div><div class="balance"><small>AVAILABLE AFTER PLANS</small><strong id="available">₹0</strong><span>Demo data · stored on this device</span></div></section>
-<section class="stats"><article><small>INCOME</small><strong id="income">₹0</strong></article><article><small>SPENDING</small><strong id="spending">₹0</strong></article><article><small>SAVINGS RATE</small><strong id="rate">0%</strong></article></section>
-<section class="content"><article class="panel"><div class="panel-title"><div><span class="eyebrow">RECENT RECORDS</span><h2>Transactions</h2></div><button id="reset">Reset demo</button></div><ul id="transactions"></ul></article><article class="panel"><span class="eyebrow">ADD A RECORD</span><h2>Keep it simple</h2><form id="form"><label>Description<input name="description" required maxlength="40" placeholder="Groceries"></label><label>Amount<input name="amount" required type="number" min="1" step="1" placeholder="1200"></label><label>Category<select name="category"><option>Food</option><option>Transport</option><option>Home</option><option>Income</option><option>Other</option></select></label><button class="primary" type="submit">Add transaction</button></form></article></section>
-<footer>No account · No analytics · No financial advice · Synthetic starter data</footer></main><script type="module" src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive public showcase of Solquity's local-first money workflows.">
+  <title>Solquity — Know where your money stands</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview"><span>S</span><div>Solquity<small>Money, made clear</small></div></a>
+      <nav id="nav"><button class="active" data-view="overview">⌂<span>Overview</span></button><button data-view="transactions">↕<span>Transactions</span><i id="capture-count">3</i></button><button data-view="accounts">▰<span>Accounts</span></button><button data-view="budgets">◎<span>Budgets & goals</span></button><button data-view="recurring">↻<span>Recurring plans</span></button><button data-view="investments">⌁<span>Investments</span></button><button data-view="cards">▤<span>Cards</span></button><button data-view="planner">◇<span>Planning tools</span></button></nav>
+      <div class="privacy-card"><b>● Local demo</b><p>Synthetic records stay in this browser. No bank connection or analytics.</p></div>
+      <button id="reset" class="reset">↺ Reset synthetic data</button>
+    </aside>
+    <main>
+      <header class="topbar"><button id="menu" aria-label="Open navigation">☰</button><div><span class="eyebrow">PERSONAL BETA SHOWCASE</span><h2 id="page-title">Overview</h2></div><div class="top-actions"><button id="capture-open">✦ Review detected payments <b id="capture-badge">3</b></button><button id="add-open" class="primary">＋ Add record</button><span class="avatar">KR</span></div></header>
+      <section id="view" tabindex="-1"></section>
+    </main>
+  </div>
+
+  <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><span class="eyebrow">NEW LEDGER RECORD</span><h2>Add transaction</h2></div><button value="cancel" aria-label="Close">×</button></div><div class="form-grid"><label>Description<input name="description" required maxlength="50" placeholder="Groceries"></label><label>Amount<input name="amount" required type="number" min="1" step="1" placeholder="1250"></label><label>Direction<select name="direction"><option value="expense">Money out</option><option value="income">Money in</option></select></label><label>Category<select name="category"><option>Food</option><option>Home</option><option>Transport</option><option>Shopping</option><option>Health</option><option>Income</option><option>Other</option></select></label><label>Account<select name="account"><option>Everyday account</option><option>Cash wallet</option><option>Travel card</option></select></label><label>Date<input name="date" type="date" value="2026-09-18"></label></div><button class="dialog-primary" type="submit">Save to local ledger</button></form></dialog>
+  <dialog id="capture-dialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">AUTOMATIC CAPTURE REVIEW</span><h2>Confirm before it counts</h2></div><button value="cancel" aria-label="Close">×</button></div><p class="dialog-copy">Synthetic notifications are parsed locally and stay outside totals until you approve them.</p><div id="capture-list"></div></form></dialog>
+  <dialog id="card-dialog"><form method="dialog" id="card-form"><div class="dialog-head"><div><span class="eyebrow">DEMO CARD</span><h2>Add a masked card</h2></div><button value="cancel" aria-label="Close">×</button></div><div class="form-grid"><label>Card nickname<input name="name" required placeholder="Travel card"></label><label>Last four digits<input name="last4" required inputmode="numeric" minlength="4" maxlength="4" pattern="[0-9]{4}" placeholder="4242"></label><label>Network<select name="network"><option>Visa</option><option>Mastercard</option><option>RuPay</option></select></label><label>Linked account<select name="account"><option>Everyday account</option><option>Cash wallet</option></select></label></div><p class="dialog-copy">Only masked synthetic values are accepted in this public demo.</p><button class="dialog-primary" type="submit">Add demo card</button></form></dialog>
+  <script type="module" src="app.js"></script>
+</body></html>
